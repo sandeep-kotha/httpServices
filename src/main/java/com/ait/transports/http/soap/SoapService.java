@@ -5,16 +5,15 @@ import javax.xml.ws.Endpoint;
 import com.umusic.itga.servicemarket.publishermanager.v1.PublishSubscribe;
 import com.umusic.itga.servicemarket.publishermanager.v1.PublishSubscribeImpl;
 
-public class InitSoapService {
+public enum SoapService {
 
+	INSTANCE;
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		 String serviceAddress = "http://localhost:9099/mysoap";  
+	public void initBizTalkPublisher(String url) {		 
 		 PublishSubscribe implementor = new PublishSubscribeImpl();
-	     Endpoint ep = Endpoint.publish(serviceAddress, implementor);
-
+	     Endpoint ep = Endpoint.publish(url, implementor);
 	}
 
 }
